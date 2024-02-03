@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Flask Template</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="static/style.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="centered-div">
+      <h1 class="m-2 text-5xl" id="counter">{{counter}}</h1>
+      <button class="m-1 bg-indigo-600 hover:bg-indigo-700 px-1 py-1 rounded" hx-post="/increase" hx-target="#counter" hx-swap="innerHTML">Increase</button>
+      <button class="m-1 bg-indigo-600 hover:bg-indigo-700 px-1 py-1 rounded" hx-post="/decrease" hx-target="#counter" hx-swap="innerHTML">Decrease</button>
+      <button class="m-1 bg-indigo-600 hover:bg-indigo-700 px-1 py-1 rounded" hx-post="/reset" hx-target="#counter" hx-swap="innerHTML">Reset</button>
+    </div>
+  </body>
+</html>
